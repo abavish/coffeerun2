@@ -14,7 +14,7 @@
     // $.post(this.serverUrl, val, function(serverResponse) {
     //   console.log(serverResponse);
     // });
-    this.Remove(key);
+    //this.remove(key);
 
     $.ajax(this.serverUrl, {
       type: "POST",
@@ -51,9 +51,9 @@
 
   RemoteDataStore.prototype.remove = function(key) {
     $.get(this.serverUrl + "?emailAddress=" + key, function(serverResponse) {
-      console.log(serverResponse[0].id);
-      $.ajax(this.serverUrl + '/' + serverResponse[0].id, {
-        type: 'DELETE'
+      //console.log(serverResponse[0].id);
+      $.ajax(this.serverUrl + "/" + serverResponse[0].id, {
+        type: "DELETE"
       });
     }.bind(this));
     //console.log(coffeeOrderId);
