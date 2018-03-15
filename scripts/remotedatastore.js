@@ -3,7 +3,6 @@
   var App = window.App || {};
   var $ = window.jQuery;
 
-  var coffeeOrderId = "";
   function RemoteDataStore(url) {
     if (!url) {
       throw new Error("No remote URL supplied.");
@@ -23,7 +22,6 @@
       data: JSON.stringify(val),
       success: function(coffeOrderData) {
         console.log(coffeOrderData.id);
-        coffeeOrderId = coffeOrderData.id;
       },
       error: function(xhr) {
         alert(xhr.responseText);
